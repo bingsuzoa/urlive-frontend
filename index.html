@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URLive - 리다이렉트</title>
+    <script>
+        // 로그인 상태 확인
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        const token = localStorage.getItem('authToken');
+        
+        if (isLoggedIn && token) {
+            // 로그인된 경우 대시보드로 이동
+        
+            window.location.href = '/dashboard.html';
+        } else {
+            // 로그인되지 않은 경우 로그인 페이지로 이동
+            window.location.href = '/login.html';
+        }
+    </script>
+</head>
+<body>
+    <p>리다이렉트 중...</p>
+</body>
+</html> 

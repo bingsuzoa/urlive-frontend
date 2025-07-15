@@ -1,0 +1,13 @@
+{
+  "name": "urlive-frontend",
+  "version": "1.0.0",
+  "description": "순수 HTML, CSS, JavaScript로 구현된 모던한 URL 단축 서비스입니다.",
+  "main": "login.js",
+  "scripts": {
+    "dev": "npx http-server -p 8000 -o",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

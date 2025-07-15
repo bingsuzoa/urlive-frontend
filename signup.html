@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URLive - 회원가입</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <div class="logo">
+                        <i class="fas fa-link"></i>
+                        <h1>URLive</h1>
+                    </div>
+                    <p class="login-tagline">회원가입</p>
+                </div>
+
+                <form id="signupForm" class="login-form">
+                    <div class="form-group">
+                        <label for="name">이름 *</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="이름을 입력하세요 (최대 10자)" 
+                                required
+                                maxlength="10"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber">휴대폰 번호 *</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-mobile-alt"></i>
+                            <input 
+                                type="text" 
+                                id="phoneNumber" 
+                                name="phoneNumber" 
+                                placeholder="01012345678" 
+                                required
+                                pattern="^01[0-9]{8,9}$"
+                                maxlength="11"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">비밀번호 *</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="영문자와 숫자 포함 8-15자" 
+                                required
+                                minlength="8"
+                                maxlength="15"
+                            >
+                            <button type="button" class="toggle-password" onclick="togglePassword()">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <small class="form-help">영문자와 숫자를 포함하여 8-15자로 입력해주세요.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">생년월일 *</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-calendar"></i>
+                            <input 
+                                type="number" 
+                                id="age" 
+                                name="age" 
+                                placeholder="생년월일 (예: 19900101)" 
+                                required
+                                min="19000101"
+                            
+                            >
+                        </div>
+                        <small class="form-help">YYYYMMDD 형식으로 입력해주세요. (예: 19900101)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>성별 *</label>
+                        <div class="radio-group">
+                            <label class="radio-wrapper">
+                                <input type="radio" name="gender" value="0" required>
+                                <span class="radio-mark"></span>
+                                남성
+                            </label>
+                            <label class="radio-wrapper">
+                                <input type="radio" name="gender" value="1" required>
+                                <span class="radio-mark"></span>
+                                여성
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isoCode">국가 *</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-globe"></i>
+                            <select id="isoCode" name="isoCode" required>
+                                <option value="">국가를 선택하세요</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span class="checkmark"></span>
+                            <a href="#" class="terms-link">이용약관</a> 및 <a href="#" class="terms-link">개인정보처리방침</a>에 동의합니다
+                        </label>
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        <i class="fas fa-user-plus"></i>
+                        회원가입
+                    </button>
+                </form>
+
+                <div class="signup-link">
+                    <p>이미 계정이 있으신가요? <a href="/login.html">로그인</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="notification" class="notification hidden">
+            <span id="notificationMessage"></span>
+        </div>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html> 

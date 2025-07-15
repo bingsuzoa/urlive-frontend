@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URLive - URL 단축 서비스</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-top">
+                <div class="logo">
+                    <i class="fas fa-link"></i>
+                    <h1>URLive</h1>
+                </div>
+                <div class="user-info">
+                    <span class="user-name" id="userName">사용자</span>
+                    <button id="changePasswordBtn" class="change-password-btn" title="비밀번호 변경">
+                        <i class="fas fa-key"></i>
+                        비밀번호 변경
+                    </button>
+                    <button id="logoutBtn" class="logout-btn" title="로그아웃">
+                        <i class="fas fa-sign-out-alt"></i>
+                        로그아웃
+                    </button>
+                </div>
+            </div>
+            <p class="tagline">긴 URL을 짧고 기억하기 쉬운 링크로 변환하세요</p>
+        </header>
+
+        <main class="main">
+            <div class="url-form-container">
+                <form id="urlForm" class="url-form">
+                    <div class="input-group">
+                        <input 
+                            type="url" 
+                            id="originalUrl" 
+                            placeholder="https://example.com/very-long-url-that-needs-to-be-shortened" 
+                            required
+                        >
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-magic"></i>
+                            단축하기
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="resultContainer" class="result-container hidden">
+                <div class="result-card">
+                    <h3>단축된 URL</h3>
+                    <div class="short-url-display">
+                        <input type="text" id="shortUrl" readonly>
+                        <button id="copyBtn" class="copy-btn">
+                            <i class="fas fa-copy"></i>
+                            복사
+                        </button>
+                    </div>
+                    <div class="url-info">
+                        <div class="info-item">
+                            <span class="label">제목:</span>
+                            <span id="urlTitle" class="value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">원본 URL:</span>
+                            <span id="originalUrlDisplay" class="value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">생성일:</span>
+                            <span id="createdDate" class="value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">조회수:</span>
+                            <span id="viewCount" class="value">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="historyContainer" class="history-container">
+                <h3>최근 단축된 URL</h3>
+                <div id="urlHistory" class="url-history">
+                    <!-- 동적으로 생성될 URL 히스토리 -->
+                </div>
+            </div>
+        </main>
+
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>URL을 단축하는 중...</p>
+        </div>
+
+        <div id="notification" class="notification hidden">
+            <span id="notificationMessage"></span>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html> 
