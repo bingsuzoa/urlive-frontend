@@ -3,23 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URLive - 리다이렉트</title>
-    <script>
-        // 로그인 상태 확인
-        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-        const token = localStorage.getItem('authToken');
-        
-        if (isLoggedIn && token) {
-            // 로그인된 경우 대시보드로 이동
-        
-            window.location.href = '/dashboard.html';
-        } else {
-            // 로그인되지 않은 경우 로그인 페이지로 이동
-            window.location.href = '/login.html';
-        }
-    </script>
+    <title>URLive</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body>
-    <p>리다이렉트 중...</p>
-</body>
-</html> 
+    <div id="app">
+        로딩 중...
+    </div>
+
+    <script type="module" src="app.js"></script> 
+    </body>
+</html>
